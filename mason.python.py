@@ -1,15 +1,16 @@
 
 
+from lib2to3.pgen2.token import NEWLINE
 import string
 from tkinter.tix import INTEGER
 from xml.etree.ElementTree import Comment
 
 
 # mason.pathon.py file from gitrepos folder edureka.tutorial
-stringe = "8"
-string1 = "Lay your burden on"
-stringL = "GOD."
-joinstringLstring1 = string1 + " " + stringL
+string1 = "Seven hours of DevOps utilizing some Python files."
+stringL = "Python code for certification training."
+stringSpace = " "
+joinstringLstring1 = string1 + stringSpace + stringL
 print(joinstringLstring1)
 # skip line
 int5 = 7
