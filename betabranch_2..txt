@@ -1,0 +1,2 @@
+[new text file description in betabranch for 'rebasing' demonstration]
+Second text file created in betabranch off main for testing feature changes.
