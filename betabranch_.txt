@@ -1,1 +1,2 @@
+[git branch command description]
 betabranch created for branch creation demonstration and this text file for change modification into betabranch off main for testing feature changes.
