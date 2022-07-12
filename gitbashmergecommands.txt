@@ -1,0 +1,146 @@
+[Edureka ~2:06:00 - on merging (eg. git merge) in Git Bash]
+
+
+techc@DESKTOP-9KBSG6H MINGW64 ~
+$ cd edureka-repo
+
+techc@DESKTOP-9KBSG6H MINGW64 ~/edureka-repo (main)
+$ dir
+Images     betabranch_.txt    desktop.ini          mason.python.py
+README.md  betabranch_2..txt  localsitecheck.html  web.config
+
+techc@DESKTOP-9KBSG6H MINGW64 ~/edureka-repo (main)
+$ git status
+On branch main
+Your branch and 'destination/main' have diverged,
+and have 18 and 3 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+nothing to commit, working tree clean
+
+techc@DESKTOP-9KBSG6H MINGW64 ~/edureka-repo (main)
+$ git pull main
+fatal: 'main' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+techc@DESKTOP-9KBSG6H MINGW64 ~/edureka-repo (main)
+$ git pull origin
+You asked to pull from the remote 'origin', but did not specify
+a branch. Because this is not the default configured remote
+for your current branch, you must specify a branch on the command line.
+
+techc@DESKTOP-9KBSG6H MINGW64 ~/edureka-repo (main)
+$ git pull origin main
+From github.com:techcsmis/Git-DevOps-Repo
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+
+techc@DESKTOP-9KBSG6H MINGW64 ~/edureka-repo (main)
+$ git status
+On branch betabranch
+nothing to commit, working tree clean
+
+techc@DESKTOP-9KBSG6H MINGW64 ~/edureka-repo (betabranch)
+$ dir
+Images     betabranch_.txt    desktop.ini          mason.python.py
+README.md  betabranch_2..txt  localsitecheck.html  web.config
+
+techc@DESKTOP-9KBSG6H MINGW64 ~/edureka-repo (betabranch)
+$ git add betabranch_.txt
+
+techc@DESKTOP-9KBSG6H MINGW64 ~/edureka-repo (betabranch)
+$ dir
+Images     betabranch_.txt   desktop.ini          mason.python.py
+README.md  betabranch_2.txt  localsitecheck.html  web.config
+
+techc@DESKTOP-9KBSG6H MINGW64 ~/edureka-repo (betabranch)
+$ git add betabranch_2.txt
+
+techc@DESKTOP-9KBSG6H MINGW64 ~/edureka-repo (betabranch)
+$ dir
+Images     betabranch_.txt   desktop.ini          mason.python.py
+README.md  betabranch_2.txt  localsitecheck.html  web.config
+
+techc@DESKTOP-9KBSG6H MINGW64 ~/edureka-repo (betabranch)
+$ git commit -m "betabranch text files adds to betabranch commit"
+[betabranch 43ec43b] betabranch text files adds to betabranch commit
+ 1 file changed, 2 insertions(+)
+ create mode 100644 betabranch_2.txt
+
+techc@DESKTOP-9KBSG6H MINGW64 ~/edureka-repo (betabranch)
+$ ls
+Images/    betabranch_.txt   desktop.ini          mason.python.py
+README.md  betabranch_2.txt  localsitecheck.html  web.config
+
+techc@DESKTOP-9KBSG6H MINGW64 ~/edureka-repo (betabranch)
+$ git checkout main
+Switched to branch 'main'
+D       betabranch_2..txt
+Your branch and 'destination/main' have diverged,
+and have 18 and 3 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+techc@DESKTOP-9KBSG6H MINGW64 ~/edureka-repo (main)
+$ ls
+Images/    betabranch_.txt  localsitecheck.html  web.config
+README.md  desktop.ini      mason.python.py
+
+techc@DESKTOP-9KBSG6H MINGW64 ~/edureka-repo (main)
+$
+
+techc@DESKTOP-9KBSG6H MINGW64 ~/edureka-repo (main)
+$
+
+techc@DESKTOP-9KBSG6H MINGW64 ~/edureka-repo (main)
+$ git merge betabranch
+Updating 9f7f26a..43ec43b
+Fast-forward
+ betabranch_2.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 betabranch_2.txt
+
+techc@DESKTOP-9KBSG6H MINGW64 ~/edureka-repo (main)
+$ ls
+Images/    betabranch_.txt   desktop.ini          mason.python.py
+README.md  betabranch_2.txt  localsitecheck.html  web.config
+
+techc@DESKTOP-9KBSG6H MINGW64 ~/edureka-repo (main)
+$ git checkout betabranch
+Switched to branch 'betabranch'
+D       betabranch_2..txt
+Your branch is ahead of 'origin/betabranch' by 1 commit.
+  (use "git push" to publish your local commits)
+
+techc@DESKTOP-9KBSG6H MINGW64 ~/edureka-repo (betabranch)
+$ git commit -a -m "modification to betabranch_2.txt file"
+[betabranch bd423af] modification to betabranch_2.txt file
+ 2 files changed, 4 insertions(+), 3 deletions(-)
+ delete mode 100644 betabranch_2..txt
+
+techc@DESKTOP-9KBSG6H MINGW64 ~/edureka-repo (betabranch)
+$ dir
+Images     betabranch_.txt   desktop.ini          mason.python.py
+README.md  betabranch_2.txt  localsitecheck.html  web.config
+
+techc@DESKTOP-9KBSG6H MINGW64 ~/edureka-repo (betabranch)
+$ cat betabranch_2.txt
+[new text file description in betabranch for 'rebasing' demonstration]
+Second text file created in betabranch off main for testing feature changes.
+
+[edit on betabranch_2.txt file for demonstration after merge operation]
+Merged main and betabranch after betabranch_2 text file created - saved...
+techc@DESKTOP-9KBSG6H MINGW64 ~/edureka-repo (betabranch)
+$ git checkout main
+Switched to branch 'main'
+Your branch and 'destination/main' have diverged,
+and have 19 and 3 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+techc@DESKTOP-9KBSG6H MINGW64 ~/edureka-repo (main)
+$ cat betabranch_2.txt
+[new text file description in betabranch for 'rebasing' demonstration]
+Second text file created in betabranch off main for testing feature changes.
+techc@DESKTOP-9KBSG6H MINGW64 ~/edureka-repo (main)
