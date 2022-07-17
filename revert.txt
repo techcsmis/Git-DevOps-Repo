@@ -1,1 +1,1 @@
-revert demo on this.revert.txt file
+revert demo in git bash on this.text.file
